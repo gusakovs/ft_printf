@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   flag_s.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 13:51:09 by mgusakov          #+#    #+#             */
-/*   Updated: 2022/01/14 19:10:48 by mgusakov         ###   ########.fr       */
+/*   Created: 2022/01/14 10:42:27 by mgusakov          #+#    #+#             */
+/*   Updated: 2022/01/14 18:54:32 by mgusakov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../includes/ft_printf.h"
 
-# include "../../libft/inc/libft.h"
-# include <stdarg.h>
+int	flag_s(va_list lst)
+{
+	int		count;
+	char	s;
 
-int				ft_printf(const char *str, ...);
-int				ft_parse(va_list lst, const char *str);
-static size_t	ft_interpret(const char *str, va_list lst, int *i);
-int				flag_c(va_list lst);
-int				flag_s(va_list lst);
-int				flag_u(va_list lst);
-int				flag_di(va_list lst);
-
-#endif
+	s = va_arg(lst, char *);
+	if (!s)
+		count += ft_putstr("(null)");
+	else
+		count += ft_putstr(s);
+	return (count);
+}

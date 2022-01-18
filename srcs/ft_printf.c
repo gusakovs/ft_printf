@@ -6,12 +6,11 @@
 /*   By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 13:53:15 by mgusakov          #+#    #+#             */
-/*   Updated: 2022/01/13 19:20:42 by mgusakov         ###   ########.fr       */
+/*   Updated: 2022/01/14 18:54:10 by mgusakov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-#include <stdio.h>
 
 static size_t	ft_interpret(const char *str, va_list lst, int *i)
 {
@@ -46,7 +45,7 @@ static int	ft_parse(va_list lst, const char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i+1]) != NULL)
+		if (str[i] == '%' && ft_strchr("cspdiuxX%", str[i + 1]) != NULL)
 		{
 			i++;
 			count += ft_interpret(str, lst, &i);
@@ -58,15 +57,14 @@ static int	ft_parse(va_list lst, const char *str)
 		}
 	}
 	return (count);
-
 }
 
 int	ft_printf(const char *str, ...)
 {
 	va_list	lst;
-	int		n; 
+	int		n;
 
-	if(!str)
+	if (!str)
 		return (-1);
 	va_start(lst, *str);
 	n = ft_parse(lst, str);

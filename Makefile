@@ -6,7 +6,7 @@
 #    By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/13 16:17:33 by mgusakov          #+#    #+#              #
-#    Updated: 2022/01/13 18:47:29 by mgusakov         ###   ########.fr        #
+#    Updated: 2022/01/14 19:03:34 by mgusakov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,10 @@ INC_DIR = includes/
 LIBFT_DIR = libft/
 
 # files
-SRC_FILES = ft_printf.c
+SRC_FILES = $(wildcard *.c)
 OBJ_FILES = $(SRC_FILES:.c=.o)
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
-
-# libraries 
-LIBFT = ft
 
 all: $(NAME)
 
