@@ -6,11 +6,11 @@
 /*   By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 13:53:15 by mgusakov          #+#    #+#             */
-/*   Updated: 2022/01/14 18:54:10 by mgusakov         ###   ########.fr       */
+/*   Updated: 2022/01/18 19:35:24 by mgusakov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/ft_printf.h" 
 
 static size_t	ft_interpret(const char *str, va_list lst, int *i)
 {
