@@ -6,16 +6,24 @@
 /*   By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 10:53:11 by mgusakov          #+#    #+#             */
-/*   Updated: 2022/01/14 18:45:48 by mgusakov         ###   ########.fr       */
+/*   Updated: 2022/02/04 22:44:29 by mgusakov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	flag_di(va_list lst)
 {
-	int	count;
+	long long	n;
+	int			neg;
 
-	count = ft_putnbr(va_arg(lst, int), 1);
-	return (count);
+	n = va_arg(lst, int);
+	neg = 0;
+	if (n < 0)
+	{
+		n *= -1;
+		neg++;
+		ft_putchar('-');
+	}
+	return (ft_putnbr_base(n, "0123456789") + neg);
 }

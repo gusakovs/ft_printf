@@ -6,13 +6,13 @@
 /*   By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 13:53:15 by mgusakov          #+#    #+#             */
-/*   Updated: 2022/01/18 19:35:24 by mgusakov         ###   ########.fr       */
+/*   Updated: 2022/02/04 22:44:33 by mgusakov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h" 
+#include "ft_printf.h" 
 
-static size_t	ft_interpret(const char *str, va_list lst, int *i)
+size_t	ft_interpret(const char *str, va_list lst, int *i)
 {
 	int	count;
 
@@ -36,7 +36,7 @@ static size_t	ft_interpret(const char *str, va_list lst, int *i)
 	return (count);
 }
 
-static int	ft_parse(va_list lst, const char *str)
+int	ft_parse(va_list lst, const char *str)
 {
 	int	i;
 	int	count;
@@ -55,6 +55,7 @@ static int	ft_parse(va_list lst, const char *str)
 			write(1, &str[i], 1);
 			count++;
 		}
+		i++;
 	}
 	return (count);
 }
@@ -66,7 +67,7 @@ int	ft_printf(const char *str, ...)
 
 	if (!str)
 		return (-1);
-	va_start(lst, *str);
+	va_start(lst, str);
 	n = ft_parse(lst, str);
 	va_end(lst);
 	return (n);

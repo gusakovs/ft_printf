@@ -6,11 +6,11 @@
 /*   By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 10:55:32 by mgusakov          #+#    #+#             */
-/*   Updated: 2022/01/14 18:51:39 by mgusakov         ###   ########.fr       */
+/*   Updated: 2022/02/04 22:45:25 by mgusakov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	flag_u(va_list lst)
 {

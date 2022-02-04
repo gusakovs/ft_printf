@@ -6,21 +6,28 @@
 /*   By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 10:42:27 by mgusakov          #+#    #+#             */
-/*   Updated: 2022/01/14 18:54:32 by mgusakov         ###   ########.fr       */
+/*   Updated: 2022/02/04 22:44:39 by mgusakov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	flag_s(va_list lst)
 {
 	int		count;
-	char	s;
+	char	*s;
 
+	count = 0;
 	s = va_arg(lst, char *);
 	if (!s)
-		count += ft_putstr("(null)");
+	{
+		ft_putstr("(null)");
+		count += 6;
+	}
 	else
-		count += ft_putstr(s);
+	{
+		ft_putstr(s);
+		count += ft_strlen(s);
+	}
 	return (count);
 }

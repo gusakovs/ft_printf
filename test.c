@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgusakov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 17:41:09 by mgusakov          #+#    #+#             */
-/*   Updated: 2022/01/27 18:31:57 by mgusakov         ###   ########.fr       */
+/*   Updated: 2022/02/04 22:47:36 by mgusakov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int main()
 {
-	ft_printf("coucou %d", 1);
+	ft_printf("%s", "salutations a tous les jojols");
 	return (0);
 }

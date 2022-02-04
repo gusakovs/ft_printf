@@ -6,16 +6,20 @@
 /*   By: mgusakov <mgusakov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 10:35:30 by mgusakov          #+#    #+#             */
-/*   Updated: 2022/01/14 16:01:23 by mgusakov         ###   ########.fr       */
+/*   Updated: 2022/02/04 22:44:43 by mgusakov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "ft_printf.h"
 
 int	flag_c(va_list lst)
 {
-	unsigned char	c;
+	char	c;
+	int		count;
 
-	c = va_arg(lst, unsigned char);
-	return (ft_putchar(c, 1));
+	count = 0;
+	c = va_arg(lst, int);
+	ft_putchar(c);
+	count ++;
+	return (count);
 }
