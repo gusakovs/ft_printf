@@ -21,12 +21,12 @@ int	flag_s(va_list lst)
 	s = va_arg(lst, char *);
 	if (!s)
 	{
-		ft_putstr("(null)");
+		ft_putstr_fd("(null)", 1);
 		count += 6;
 	}
 	else
 	{
-		ft_putstr(s);
+		ft_putstr_fd(s, 1);
 		count += ft_strlen(s);
 	}
 	return (count);
